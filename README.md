@@ -11,5 +11,5 @@ docker run -d \
 
 ### Logs and Token
 ```
-docker logs teaspe
+docker logs teaspeak
 ```

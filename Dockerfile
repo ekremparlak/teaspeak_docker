@@ -5,9 +5,9 @@ RUN apt-get update -y &&\
 	wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl &&\
 	chmod a+rx /usr/local/bin/youtube-dl
 WORKDIR /opt/teaspeak
-RUN wget https://repo.teaspeak.de/server/linux/amd64/TeaSpeak-1.3.1-beta-1.tar.gz &&\
-	tar -xzf TeaSpeak-1.3.1-beta-1.tar.gz &&\
-	rm TeaSpeak-1.3.1-beta-1.tar.gz &&\
+RUN wget https://repo.teaspeak.de/server/linux/amd64/TeaSpeak-1.3.2-beta.tar.gz &&\
+	tar -xzf TeaSpeak-1.3.2-beta.tar.gz &&\
+	rm TeaSpeak-1.3.2-beta.tar.gz &&\
 	apt-get purge -y wget
 COPY config.yml /opt/teaspeak/
 EXPOSE 10011/tcp 30033/tcp 9987/udp 9987/tcp

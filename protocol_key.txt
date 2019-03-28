@@ -1,0 +1,5 @@
+version: 0
+chain: AQCVXTlKF+UQc0yga99dOQ9FJCwLaJqtDb1G7xYPMvHFMwIKVfKADF6zAAcAAAAgQW5vbnltb3VzAA==
+root_key_prv: QCUIVtjakIWe3BoNWHt9c6BX8lUyR4QOPirywBuPI0s=
+root_key_pbl: zQ3irtRjRVCafjz9j2iz3HVVsp3M7HPNGHUPmTgSQIo=
+root_prv_index: 1

@@ -5,9 +5,9 @@ RUN apt-get update -y &&\
 	wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl &&\
 	chmod a+rx /usr/local/bin/youtube-dl
 WORKDIR /opt/teaspeak
-RUN wget https://repo.teaspeak.de/server/linux/amd64_optimized/TeaSpeak-1.3.13-beta.tar.gz &&\
-	tar -xzf TeaSpeak-1.3.13-beta.tar.gz &&\
-	rm TeaSpeak-1.3.13-beta.tar.gz
+RUN wget https://repo.teaspeak.de/server/linux/amd64_optimized/TeaSpeak-1.3.13-beta-1.tar.gz &&\
+	tar -xzf TeaSpeak-1.3.13-beta-1.tar.gz &&\
+	rm TeaSpeak-1.3.13-beta-1.tar.gz
 RUN ./install_libnice.sh
 RUN ./install_music.sh install
 RUN apt-get purge -y wget curl unzip

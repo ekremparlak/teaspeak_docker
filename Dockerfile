@@ -2,6 +2,7 @@ FROM debian:9.5-slim
 RUN mkdir -p /opt/teaspeak
 RUN apt-get update -y &&\
 	apt-get --no-install-recommends install -y wget curl unzip ca-certificates python &&\
+	rm -rf /var/lib/apt/lists/* &&\
 	wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl &&\
 	chmod a+rx /usr/local/bin/youtube-dl
 WORKDIR /opt/teaspeak

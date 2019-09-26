@@ -8,7 +8,7 @@ RUN apt-get update -y &&\
         wget https://repo.teaspeak.de/server/linux/amd64_stable/TeaSpeak-1.3.25.tar.gz &&\
         tar -xzf TeaSpeak-1.3.25.tar.gz &&\
         rm TeaSpeak-1.3.25.tar.gz &&\
-         ./install_libnice.sh &&\
+        ./install_libnice.sh &&\
         ./install_music.sh install &&\
         apt-get purge -y wget curl unzip &&\
         rm -rf /var/lib/apt/lists/*

@@ -11,6 +11,7 @@ RUN apt-get update -y &&\
         ./install_libnice.sh &&\
         ./install_music.sh install &&\
         apt-get purge -y wget curl unzip &&\
+        rm -r tmp_files &&\
         rm -rf /var/lib/apt/lists/*
 COPY config.yml /opt/teaspeak/
 COPY protocol_key.txt /opt/teaspeak/

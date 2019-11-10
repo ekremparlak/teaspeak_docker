@@ -1,4 +1,4 @@
-FROM debian:9.5-slim
+FROM debian:10-slim
 RUN mkdir -p /opt/teaspeak
 WORKDIR /opt/teaspeak
 RUN apt-get update -y &&\

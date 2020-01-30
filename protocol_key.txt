@@ -1,5 +1,5 @@
-version: 0
-chain: AQDu4JvQZYHLu7IQs+u3DT5RuuIo4AJUEl4wtMWBJJ5fLgILSIaADVFHAAcAAAAgQW5vbnltb3VzAA==
-root_key_prv: 6BF8mY1BHQAqVks5wxApoX/YH3QTrWedm6WLDD9gw3I=
-root_key_pbl: zQ3irtRjRVCafjz9j2iz3HVVsp3M7HPNGHUPmTgSQIo=
-root_prv_index: 1
+version:0
+chain:AQDrfxq4jzNtn/l1A2pgVJfS+0EyDfzzcQXcAT2Xr7bNLgIMNyYADhmrAAcAAAAgQW5vbnltb3VzAA==
+root_key_prv:yF5W0sloiDqJd6lWkstAxUpLD9l3ZN9FI+pSA2W7H3k=
+root_key_pbl:zQ3irtRjRVCafjz9j2iz3HVVsp3M7HPNGHUPmTgSQIo=
+root_prv_index:1

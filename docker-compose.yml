@@ -1,0 +1,16 @@
+version: "3"
+services:
+  teaspeak:
+    container_name: teaspeak
+    image: eparlak/teaspeak
+    ports:
+      - 30033:30033/tcp
+      - 10011:10011/tcp
+      - 9987:9987/udp
+      - 9987:9987/tcp
+    restart: unless-stopped
+    volumes:
+      - ./logs:/opt/teaspeak/logs
+      - ./files:/opt/teaspeak/files
+      - ./db:/opt/teaspeak/database
+      - ./certs:/opt/teaspeak/certs

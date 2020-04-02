@@ -1,5 +1,5 @@
 FROM debian:10-slim
-ARG VERSION=1.3.25-2
+ARG VERSION=1.4.10
 RUN mkdir -p /opt/teaspeak
 WORKDIR /opt/teaspeak
 RUN apt-get update -y &&\
@@ -9,7 +9,6 @@ RUN apt-get update -y &&\
         wget https://repo.teaspeak.de/server/linux/amd64_stable/TeaSpeak-$VERSION.tar.gz &&\
         tar -xzf TeaSpeak-$VERSION.tar.gz &&\
         rm TeaSpeak-$VERSION.tar.gz &&\
-        ./install_libnice.sh &&\
         ./install_music.sh install &&\
         apt-get purge -y wget curl unzip &&\
         rm -r tmp_files &&\

@@ -1,5 +1,5 @@
 FROM debian:10-slim
-ARG VERSION=1.4.12
+ARG VERSION=1.4.14
 RUN mkdir -p /opt/teaspeak
 WORKDIR /opt/teaspeak
 RUN apt-get update -y &&\

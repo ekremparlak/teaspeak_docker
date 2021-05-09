@@ -1,5 +1,5 @@
 FROM debian:10-slim
-ARG VERSION=1.4.14
+ARG VERSION=1.4.22
 RUN mkdir -p /opt/teaspeak
 WORKDIR /opt/teaspeak
 RUN apt-get update -y &&\
@@ -15,7 +15,9 @@ RUN apt-get update -y &&\
         rm -rf /var/lib/apt/lists/*
 COPY config.yml /opt/teaspeak/
 COPY protocol_key.txt /opt/teaspeak/
+ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.8.0/s6-overlay-amd64.tar.gz /tmp/
+RUN gunzip -c /tmp/s6-overlay-amd64.tar.gz | tar -xf - -C /
+COPY root/ /
 EXPOSE 10011/tcp 30033/tcp 9987/udp 9987/tcp
 VOLUME /opt/teaspeak/files /opt/teaspeak/database /opt/teaspeak/certs /opt/teaspeak/logs
-SHELL ["/bin/bash", "-c"]
-CMD ./teastart_minimal.sh
+ENTRYPOINT ["/init"]

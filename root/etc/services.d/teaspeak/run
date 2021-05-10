@@ -1,2 +1,3 @@
 #!/usr/bin/execlineb -P
+s6-setuidgid teaspeak
 /opt/teaspeak/teastart_minimal.sh

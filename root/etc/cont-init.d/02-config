@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+with-contenv
+s6-envuidgid teaspeak /teaconfig.sh

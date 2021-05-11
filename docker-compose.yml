@@ -4,8 +4,8 @@ services:
     container_name: teaspeak
     image: eparlak/teaspeak
     ports:
-      - 30033:30033/tcp
-      - 10011:10011/tcp
+      - 30303:30303/tcp
+      - 10101:10101/tcp
       - 9987:9987/udp
       - 9987:9987/tcp
     restart: unless-stopped

@@ -1,4 +1,0 @@
-/opt/teaspeak true teaspeak 0600 0700
-/opt/teaspeak/teastart_minimal.sh true teaspeak 0700
-/opt/teaspeak/TeaSpeakServer true teaspeak 0700
-/opt/teaspeak/providers true teaspeak 700 700

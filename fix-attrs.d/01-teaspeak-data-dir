@@ -1,0 +1,8 @@
+/opt/teaspeak/teastart_minimal.sh true teaspeak 0700
+/opt/teaspeak/TeaSpeakServer true teaspeak 0700
+/opt/teaspeak/providers true teaspeak 700 700
+/opt/teaspeak/logs false teaspeak 700 700
+/opt/teaspeak/files true teaspeak 700 700
+/opt/teaspeak/database true teaspeak 700 700
+/opt/teaspeak/certs true teaspeak 700 700
+/opt/teaspeak/config.yml true teaspeak 700

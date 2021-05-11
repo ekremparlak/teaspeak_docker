@@ -1,3 +1,5 @@
+# Teaspeak Docker Image
+
 ### Usage
 
 ```
@@ -14,3 +16,50 @@ docker run -d \
 ```
 docker logs teaspeak
 ```
+### Docker-compose
+
+````
+version: "3"
+services:
+  teaspeak:
+    container_name: teaspeak
+    image: eparlak/teaspeak
+    ports:
+      - 30033:30033/tcp
+      - 10011:10011/tcp
+      - 9987:9987/udp
+      - 9987:9987/tcp
+    restart: unless-stopped
+    volumes:
+      - ./logs:/opt/teaspeak/logs
+      - ./files:/opt/teaspeak/files
+      - ./db:/opt/teaspeak/database
+      - ./certs:/opt/teaspeak/certs
+````
+
+## Environment Variables
+
+`DEFAULT_PORT` Default: 9987
+
+`QUERY_PORT` Default: 10101 
+
+`FILE_PORT` Default: 30303 
+
+`EXPERIMENTAL_31` Default: 0 If you wanna use this you need to mount the protocol_key.tx -v /path/to/protocol_key.txt:/opt/teaspeak/protocol_key.txt
+
+`ALLOW_WEBLIST` Default: 0 Enable/disable weblist reports globally!
+
+`WEB_ENABLED` Default: 1 Disable/enable the possibility to connect via the TeaSpeak web client
+
+`MUSIC_ENABLED` Default: 1 Enable/disable the music bots
+
+`LOG_LEVEL` Default: 3 The log level within the log files
+
+`LOG_LEVEL_TERMINAL` Default: 3 The log level within the TeaSpeak server terminal
+
+`CONNECT_LIMIT` Default: 10 Maximum amount of join attempts per second.
+
+`CONNECT_LIMIT_CLIENT` Default: 3 Maximum amount of join attempts per second per ip
+
+
+  

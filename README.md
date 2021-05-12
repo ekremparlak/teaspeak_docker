@@ -45,7 +45,7 @@ services:
 
 `FILE_PORT` Default: 30303 
 
-`EXPERIMENTAL_31` Default: 0 If you wanna use this you need to mount the protocol_key.tx with `-v /path/to/protocol_key.txt:/opt/teaspeak/protocol_key.txt`
+`EXPERIMENTAL_31` Default: 0 If you wanna use this you need to mount the protocol_key.txt with `-v /path/to/protocol_key.txt:/opt/teaspeak/protocol_key.txt`
 
 `ALLOW_WEBLIST` Default: 0 Enable/disable weblist reports globally!
 

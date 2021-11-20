@@ -1,5 +1,5 @@
 FROM debian:10-slim
-ARG VERSION=1.4.22
+ARG VERSION=1.5.6
 RUN mkdir -p /opt/teaspeak
 WORKDIR /opt/teaspeak
 RUN useradd -M teaspeak

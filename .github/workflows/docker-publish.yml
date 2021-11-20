@@ -33,7 +33,7 @@ jobs:
 
     - name: Set image tags
       run: |
-        if [[ VERSION == LAST_VERSION ]] ; \
+        if [[ $VERSION == $LAST_VERSION ]] ; \
         then echo "TAG=latest" >> $GITHUB_ENV ; \
         else echo "TAG=$VERSION" >> $GITHUB_ENV ; fi
 

@@ -17,15 +17,25 @@ jobs:
   buildx:
     name: Build and push
     runs-on: ubuntu-latest
-    env:
-      VERSION: "1.5.6"
     steps:
+
+    - name: Set latest version
+      run: |
+        LAST_VERSION=$(curl https://repo.teaspeak.de/server/linux/amd64_stable/latest) \
+        && echo "VERSION=$LAST_VERSION" >> $GITHUB_ENV \
+        && echo "LAST_VERSION=$LAST_VERSION" >> $GITHUB_ENV
 
     - name: Set variables for workflow
       run: |
         WORKFLOW_VERSION=$(echo ${{ github.event.inputs.version }}) \
         && if [[ -n $WORKFLOW_VERSION ]] ; \
         then echo "VERSION=$WORKFLOW_VERSION" >> $GITHUB_ENV ; fi
+
+    - name: Set image tags
+      run: |
+        if [[ VERSION == LAST_VERSION ]] ; \
+        then echo "TAG=latest" >> $GITHUB_ENV ; \
+        else echo "TAG=$VERSION" >> $GITHUB_ENV ; fi
 
     - name: Checkout master
       uses: actions/checkout@v2
@@ -52,8 +62,8 @@ jobs:
       run: | 
         docker build . \
         --build-arg VERSION=$VERSION \
-        --tag ghcr.io/$GITHUB_ACTOR/teaspeak:latest \
+        --tag ghcr.io/$GITHUB_ACTOR/teaspeak:$TAG \
         --tag ghcr.io/$GITHUB_ACTOR/teaspeak:$VERSION \
+        --tag ${{ secrets.DOCKERHUB_USERNAME }}/teaspeak:$TAG \
         --tag ${{ secrets.DOCKERHUB_USERNAME }}/teaspeak:$VERSION \
-        --tag ${{ secrets.DOCKERHUB_USERNAME }}/teaspeak:latest \
         --push

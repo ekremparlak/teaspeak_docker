@@ -1,13 +1,15 @@
 FROM debian:10-slim
-ARG VERSION=1.5.6
+ARG VERSION
 RUN mkdir -p /opt/teaspeak
 WORKDIR /opt/teaspeak
 RUN useradd -M teaspeak
+SHELL ["/bin/bash", "-c"]
 RUN apt-get update -y &&\
         apt-get --no-install-recommends install -y wget curl unzip ca-certificates python &&\
-        wget https://repo.teaspeak.de/server/linux/amd64_stable/TeaSpeak-$VERSION.tar.gz &&\
-        tar -xzf TeaSpeak-$VERSION.tar.gz &&\
-        rm TeaSpeak-$VERSION.tar.gz &&\
+        if [[ -n $VERSION ]] ; then TEA_VERSION=$(echo $VERSION) ; else TEA_VERSION=$(curl https://repo.teaspeak.de/server/linux/amd64_stable/latest) ; fi &&\
+        wget https://repo.teaspeak.de/server/linux/amd64_stable/TeaSpeak-$TEA_VERSION.tar.gz &&\
+        tar -xzf TeaSpeak-$TEA_VERSION.tar.gz &&\
+        rm TeaSpeak-$TEA_VERSION.tar.gz &&\
         ./install_music.sh install &&\
         apt-get purge -y wget curl unzip &&\
         apt autoremove -y &&\
